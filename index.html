@@ -216,45 +216,36 @@
     /* ── WORK / VIDEO GRID ── */
     .work-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 0 7%;
     }
 
     .work-card {
       position: relative;
-      aspect-ratio: 16/9;
       background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       overflow: hidden;
-      cursor: pointer;
-      text-decoration: none;
+      transition: all .3s;
+    }
+
+    .work-card:hover {
+      border-color: var(--silver-dim);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+
+    .work-card iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
       display: block;
     }
 
-    .work-card video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.5;
-      transition: opacity .4s, transform .5s;
+    .work-card-info {
+      padding: 14px 18px;
     }
-
-    .work-card:hover video {
-      opacity: 1;
-      transform: scale(1.04);
-    }
-
-    .work-card-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-      transition: opacity .3s;
-    }
-
-    .work-card:hover .work-card-overlay { opacity: 0; }
 
     .work-tag {
       font-size: 10px;
@@ -268,30 +259,6 @@
       font-size: 15px;
       font-weight: 600;
       color: var(--white);
-    }
-
-    .work-play {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
-      transition: all .3s;
-      backdrop-filter: blur(4px);
-    }
-
-    .work-card:hover .work-play {
-      background: var(--silver);
-      color: #000;
-      border-color: var(--silver);
-      transform: translate(-50%, -50%) scale(1.1);
     }
 
     /* ── SKILLS ── */
@@ -556,75 +523,61 @@
     </div>
     <div class="work-grid">
 
-      <a href="asserts/TRENDING1.mp4" class="work-card" target="_blank" rel="noopener noreferrer">
-        <video src="asserts/TRENDING1.mp4" muted loop preload="none"
-          onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
-        <div class="work-card-overlay">
-          <div class="work-tag">Trending</div>
-          <div class="work-title">Trending Reel #1</div>
-        </div>
-        <div class="work-play"><i class="fa-solid fa-play"></i></div>
-      </a>
-
-      <a href="asserts/FUCNTION HILIGHTS.mp4" class="work-card" target="_blank" rel="noopener noreferrer">
-        <video src="asserts/FUCNTION HILIGHTS.mp4" muted loop preload="none"
-          onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
-        <div class="work-card-overlay">
-          <div class="work-tag">Function</div>
-          <div class="work-title">Function Highlights #1</div>
-        </div>
-        <div class="work-play"><i class="fa-solid fa-play"></i></div>
-      </a>
-
-      <a href="asserts/FUCNTION HILIGHTS1.mp4" class="work-card" target="_blank" rel="noopener noreferrer">
-        <video src="asserts/FUCNTION HILIGHTS1.mp4" muted loop preload="none"
-          onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
-        <div class="work-card-overlay">
-          <div class="work-tag">Function</div>
-          <div class="work-title">Function Highlights #2</div>
-        </div>
-        <div class="work-play"><i class="fa-solid fa-play"></i></div>
-      </a>
-
-      <a href="asserts/EVENT.mp4" class="work-card" target="_blank" rel="noopener noreferrer">
-        <video src="asserts/EVENT.mp4" muted loop preload="none"
-          onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
-        <div class="work-card-overlay">
+      <div class="work-card">
+        <iframe src="https://drive.google.com/file/d/1Lr7kq0vWBKLKZHVHTz3Gem7G0ZpLF-M3/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="work-card-info">
           <div class="work-tag">Event</div>
           <div class="work-title">Event Edit #1</div>
         </div>
-        <div class="work-play"><i class="fa-solid fa-play"></i></div>
-      </a>
+      </div>
 
-      <a href="asserts/EVENT1.mp4" class="work-card" target="_blank" rel="noopener noreferrer">
-        <video src="asserts/EVENT1.mp4" muted loop preload="none"
-          onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
-        <div class="work-card-overlay">
+      <div class="work-card">
+        <iframe src="https://drive.google.com/file/d/1IaKAsONLc3Vr8ve0q_tyQofIRvyNuvWg/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="work-card-info">
           <div class="work-tag">Event</div>
           <div class="work-title">Event Edit #2</div>
         </div>
-        <div class="work-play"><i class="fa-solid fa-play"></i></div>
-      </a>
+      </div>
 
-      <a href="asserts/FAN PAGE.mp4" class="work-card" target="_blank" rel="noopener noreferrer">
-        <video src="asserts/FAN PAGE.mp4" muted loop preload="none"
-          onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
-        <div class="work-card-overlay">
+      <div class="work-card">
+        <iframe src="https://drive.google.com/file/d/15UZGZyaOQA1wiwSMOZ5Be7qN4ZpqAt8a/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="work-card-info">
           <div class="work-tag">Fan Edit</div>
           <div class="work-title">Fan Page Edit #1</div>
         </div>
-        <div class="work-play"><i class="fa-solid fa-play"></i></div>
-      </a>
+      </div>
 
-      <a href="asserts/FAN PAGE1.mp4" class="work-card" target="_blank" rel="noopener noreferrer">
-        <video src="asserts/FAN PAGE1.mp4" muted loop preload="none"
-          onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
-        <div class="work-card-overlay">
+      <div class="work-card">
+        <iframe src="https://drive.google.com/file/d/1KZIaiSLkOjEF-Osh6JlFidY2jlAsdeUJ/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="work-card-info">
           <div class="work-tag">Fan Edit</div>
           <div class="work-title">Fan Page Edit #2</div>
         </div>
-        <div class="work-play"><i class="fa-solid fa-play"></i></div>
-      </a>
+      </div>
+
+      <div class="work-card">
+        <iframe src="https://drive.google.com/file/d/1jst4ZgMpuD1I0-w5flu72GErqSeCDm9g/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="work-card-info">
+          <div class="work-tag">Function</div>
+          <div class="work-title">Function Highlights #1</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <iframe src="https://drive.google.com/file/d/1IrFQ_sC3IfKe6rDV0SWUtFVUGZ76Z2Eo/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="work-card-info">
+          <div class="work-tag">Function</div>
+          <div class="work-title">Function Highlights #2</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <iframe src="https://drive.google.com/file/d/1p48lQQR6Z82JElrfaFxlQj18m1eMw8JW/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="work-card-info">
+          <div class="work-tag">Trending</div>
+          <div class="work-title">Trending Reel #1</div>
+        </div>
+      </div>
 
     </div>
   </section>
